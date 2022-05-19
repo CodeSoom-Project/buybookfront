@@ -7,15 +7,13 @@ import {
 } from 'react-query'
 // import { getTodos, postTodo } from '../my-api'
 
-const BASE_URL = 'https://fakestoreapi.com'
+const BASE_URL = `https://fakestoreapi.com`
 
 // Create a client
 export const getClient =(() => {
   let client = null;
   return() => {
-    if(!client) client = new QueryClient({
-
-    })
+    if(!client) client = new QueryClient({})
     return client
   }
 })()
@@ -27,7 +25,14 @@ export const fetcher = async ({
   params,
 }) => {
   try {
-    const url = `${BASE_URL}`
+    const url = `${BASE_URL}${path}`
+    const fetchOptions = {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': BASE_URL
+      }
+    }
     const res = await fetch(url, fetchOptions)
     const json = await res.json()
     return json
