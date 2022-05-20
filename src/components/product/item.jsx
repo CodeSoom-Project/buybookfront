@@ -3,11 +3,11 @@ import {Link} from "react-router-dom";
 
 let ProductList = styled.li({
   border: '1px solid #000000',
-  padding: '10px',
+  padding: '0.63em',
   img:{
-    width: '100%',
-    height: '300px',
-    objectFit: 'contain'
+    width: '40%',
+    height: '18.75em',
+    objectFit: "contain"
   }
 })
 
@@ -15,7 +15,7 @@ let ProductList = styled.li({
 
 
 
-const ProductItem = ({ image, rating, title, id}) => (
+const ProductItem = ({ image, rating, title, id }) => (
   <Link to={`/products/${id}`}>
     <ProductList>
       <p>{title}</p>
