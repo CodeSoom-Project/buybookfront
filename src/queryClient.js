@@ -1,28 +1,32 @@
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
+import {QueryClient,} from 'react-query'
 
 const BASE_URL = `https://fakestoreapi.com`
 
 // Create a client
-export const getClient =(() => {
+export const getClient = (() => {
   let client = null;
-  return() => {
-    if(!client) client = new QueryClient({})
+  return () => {
+    if (!client) client = new QueryClient({
+      defaultOptions: {
+        queries: {
+          cacheTime: 1000 * 60 * 60 * 24,
+          staleTime: 1000,
+          refetchOnMount: false,
+          refetchOnReconnect: false,
+          refetchOnWindowFocus: false,
+        },
+      },
+    })
     return client
   }
 })()
 
 export const fetcher = async ({
-  method,
-  path,
-  body,
-  params,
-}) => {
+                                method,
+                                path,
+                                body,
+                                params,
+                              }) => {
   try {
     let url = `${BASE_URL}${path}`
     const fetchOptions = {
@@ -37,7 +41,7 @@ export const fetcher = async ({
       url += '?' + searchParams.toString()
     }
 
-    if(body) fetchOptions.body = JSON.stringify(body)
+    if (body) fetchOptions.body = JSON.stringify(body)
 
     const res = await fetch(url, fetchOptions)
     const json = await res.json()
