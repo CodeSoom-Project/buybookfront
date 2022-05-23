@@ -1,5 +1,14 @@
-const SearchResult = ({searched, data}) => {
+import styled from "@emotion/styled";
+import SearchedItem from "./searchItem";
 
+const ProductList = styled.ul({
+  display: 'flex',
+  flexDirection: 'column',
+  height: 'auto',
+  background: 'lightgray',
+})
+
+const SearchResult = ({searched, data}) => {
 
   if (!data) return null;
 
@@ -9,13 +18,15 @@ const SearchResult = ({searched, data}) => {
 
 
   return (
-    <>
-      <ul>
-        {filtered?.map((itemList) => {
-          return <li key={itemList.id} {...itemList} />;
-        })}
-      </ul>
-    </>
+
+    <ProductList>
+      {filtered?.map((itemList) => {
+        return (
+          <SearchedItem key={itemList.id} {...itemList} />
+        )
+      })}
+    </ProductList>
+
   )
 }
 export default SearchResult;

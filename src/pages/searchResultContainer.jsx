@@ -8,11 +8,12 @@ const SearchResultContainer = () => {
 
   const searched = useSelector(get('searched'));
 
-  const {data} = useQuery([QueryKeys.PRODUCTS], () =>
-    fetcher({
-      method: 'GET',
-      path: `/products/`
-    }),
+  const {data} = useQuery([QueryKeys.PRODUCTS],
+    () =>
+      fetcher({
+        method: 'GET',
+        path: `/products/`
+      }),
   )
 
   return (
