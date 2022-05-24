@@ -14,4 +14,4 @@ $ yarn dev
 
 https://buybook.codesoom.com/
 
-currently you can check searchform and product list
+currently you can check searchform and product list and product detail
