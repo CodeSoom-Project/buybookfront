@@ -1,8 +1,7 @@
-const SearchBar = ({searched, onChange, onSubmit}) => {
-
+function SearchBar({ searched, onChange, onSubmit }) {
   function handleChange(event) {
-    const {target: {value}} = event;
-    onChange({value});
+    const { target: { value } } = event;
+    onChange({ value });
   }
 
   return (
