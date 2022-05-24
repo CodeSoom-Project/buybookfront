@@ -1,17 +1,20 @@
-name: Deploy
+name: Build and Deploy
 
-on:
-  push:
-    branches:
-      - master
+on: [ push ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: yarn install --frozen-lockfile
+      - name: Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: yarn build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          heroku_api_key: ENV['API_KEY]
-          heroku_app_name: "buybookfront"
-          heroku_email: "dladudgn123@naver.com"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
