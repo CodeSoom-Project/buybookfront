@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import SignUpPage from './SignUpPage';
 
-const SignForm = styled.div`
+const FormWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +10,9 @@ const SignForm = styled.div`
 
 function SignUpPageContainer() {
   return (
-    <SignForm>
+    <FormWrapper>
       <SignUpPage />
-    </SignForm>
+    </FormWrapper>
   );
 }
 

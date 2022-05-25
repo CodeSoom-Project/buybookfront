@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { getClient } from './queryClient';
 import MainPage from './pages';
-import LoginPage from './pages/LoginPage';
+import LoginPageContainer from './pages/LoginPageContainer';
 import ProductList from './pages/products';
 import ProductDetailPage from './pages/products/[id]';
 import Layout from './pages/_layout';
@@ -21,7 +21,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<MainPage />} />
           <Route path="signup" element={<SignUpPageContainer />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="login" element={<LoginPageContainer />} />
           <Route path="products" element={<ProductList />} />
           <Route path="products/:id" element={<ProductDetailPage />} />
           <Route path="search/:word" element={<SearchResultContainer />} />

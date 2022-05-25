@@ -9,7 +9,6 @@ function FormInput(props) {
   const { placeholder } = props;
   return (
     <div>
-      {/* <label>Username</label> */}
       <Input placeholder={placeholder} />
     </div>
   );

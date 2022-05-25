@@ -11,6 +11,7 @@ function SignUpPage() {
   const [id, onChangeId] = useInput('');
   const [password, onChangePassword] = useInput('');
 
+  // todo onsubmit 조건이 되면 가입이 안되게
   const onSubmit = useCallback(() => {
     if (password !== passwordCheck) {
       return setPasswordError(true);
@@ -33,14 +34,27 @@ function SignUpPage() {
   return (
     <form>
       <div>
-        <label htmlFor="user-id">아이디</label>
+        <label
+          htmlFor="user-id"
+        >
+          아이디
+        </label>
         <br />
-        <FormInput name="user-id" value={id} onChange={onChangeId} />
+        <FormInput
+          name="user-id"
+          value={id}
+          onChange={onChangeId}
+        />
       </div>
       <div>
         <label htmlFor="user-password">비밀번호</label>
         <br />
-        <FormInput name="user-password" type="password" value={password} onChange={onChangePassword} />
+        <FormInput
+          name="user-password"
+          type="password"
+          value={password}
+          onChange={onChangePassword}
+        />
       </div>
       <div>
         <label htmlFor="user-password-check">비밀번호체크</label>
@@ -55,14 +69,23 @@ function SignUpPage() {
       </div>
       <div>
         <label>
-          <input type="checkbox" name="user-term" checked={term} onChange={onChangeTerm} />
+          <input
+            type="checkbox"
+            name="user-term"
+            checked={term}
+            onChange={onChangeTerm}
+          />
           {' '}
           규칙을 잘 지킬 것을 동의합니다.
         </label>
         {termError && <div style={{ color: 'red' }}>약관에 동의하셔야 합니다.</div>}
       </div>
       <div style={{ marginTop: 10 }}>
-        <button type="button">가입하기</button>
+        <button
+          type="button"
+        >
+          가입하기
+        </button>
       </div>
     </form>
   );

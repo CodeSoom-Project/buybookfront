@@ -1,37 +1,42 @@
 import { Link } from 'react-router-dom';
+import FormInput from '../components/FormInput';
 
-function LoginForm() {
+function LoginForm({
+  id, onChangeId, password, onChangePassword,
+}) {
   return (
-    <>
-      <form>
-        <label htmlFor="login-email">
-          E-mail
+    <form>
+      <div>
+        <label htmlFor="login-id">
+          아이디
         </label>
-        <input
-          type="email"
-          id="login-email"
-          name="email"
-          value=""
+        <FormInput
+          type="text"
+          id="login-id"
+          name="id"
+          value={id}
+          onChange={onChangeId}
         />
-      </form>
-      <form>
+      </div>
+      <div>
         <label htmlFor="login-password">
-          Password
+          비밀번호
         </label>
-        <input
+        <FormInput
           type="password"
           id="login-password"
           name="password"
-          value=""
+          value={password}
+          onChange={onChangePassword}
         />
-      </form>
-      <Link to="/signup">계정 만들기</Link>
+      </div>
+      <Link to="/signup">회원가입</Link>
       <button
         type="button"
       >
-        Log In
+        로그인
       </button>
-    </>
+    </form>
   );
 }
 
