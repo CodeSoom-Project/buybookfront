@@ -1,6 +1,11 @@
 import { useCallback, useState } from 'react';
-import FormInput from '../components/FormInput';
+import styled from '@emotion/styled';
 import useInput from '../hooks/useInput';
+
+const FormInput = styled.input`
+  padding: 0.93em;
+  margin: 0.625em 0;
+`;
 
 function SignUpPage() {
   const [passwordCheck, setPasswordCheck] = useState('');
@@ -11,7 +16,6 @@ function SignUpPage() {
   const [id, onChangeId] = useInput('');
   const [password, onChangePassword] = useInput('');
 
-  // todo onsubmit 조건이 되면 가입이 안되게
   const onSubmit = useCallback(() => {
     if (password !== passwordCheck) {
       return setPasswordError(true);
@@ -32,7 +36,7 @@ function SignUpPage() {
   }, []);
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div>
         <label
           htmlFor="user-id"

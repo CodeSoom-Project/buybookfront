@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import FormInput from '../components/FormInput';
+import styled from '@emotion/styled';
+
+const FormInput = styled.input`
+  padding: 0.93em;
+  margin: 0.625em 0;
+`;
 
 function LoginForm({
   id, onChangeId, password, onChangePassword,
@@ -10,6 +15,7 @@ function LoginForm({
         <label htmlFor="login-id">
           아이디
         </label>
+        <br />
         <FormInput
           type="text"
           id="login-id"
@@ -22,6 +28,7 @@ function LoginForm({
         <label htmlFor="login-password">
           비밀번호
         </label>
+        <br />
         <FormInput
           type="password"
           id="login-password"
