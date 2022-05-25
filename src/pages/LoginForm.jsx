@@ -1,5 +1,6 @@
-const LoginForm = (() => {
+import { Link } from 'react-router-dom';
 
+function LoginForm() {
   return (
     <>
       <form>
@@ -10,7 +11,7 @@ const LoginForm = (() => {
           type="email"
           id="login-email"
           name="email"
-          value=''
+          value=""
         />
       </form>
       <form>
@@ -21,9 +22,10 @@ const LoginForm = (() => {
           type="password"
           id="login-password"
           name="password"
-          value=''
+          value=""
         />
       </form>
+      <Link to="/signup">계정 만들기</Link>
       <button
         type="button"
       >
@@ -31,6 +33,6 @@ const LoginForm = (() => {
       </button>
     </>
   );
-});
+}
 
 export default LoginForm;

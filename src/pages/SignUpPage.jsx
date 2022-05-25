@@ -1,7 +1,12 @@
+import FormInput from '../components/FormInput';
+
 export default function SignUpPage() {
   return (
-    <div>
-      <h2>회원 가입</h2>
-    </div>
+    <form>
+      <FormInput placeholder="Username" />
+      <FormInput placeholder="Email" />
+      <FormInput placeholder="Full Name" />
+      <FormInput placeholder="Sth else" />
+    </form>
   );
 }

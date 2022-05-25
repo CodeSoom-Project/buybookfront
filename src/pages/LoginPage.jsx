@@ -1,12 +1,12 @@
-import LoginFormContainer from "./LoginFormContainer";
+import LoginFormContainer from './LoginFormContainer';
 
-const LoginPage = () => {
+function LoginPage() {
   return (
     <div>
       <h2>Log In</h2>
-      <LoginFormContainer/>
+      <LoginFormContainer />
     </div>
   );
 }
 
-export default LoginPage
+export default LoginPage;

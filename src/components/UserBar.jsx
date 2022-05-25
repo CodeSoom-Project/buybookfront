@@ -1,11 +1,28 @@
 import { Link } from 'react-router-dom';
+import styled from '@emotion/styled';
+
+const Container = styled.div`
+  display: flex;
+`;
+
+const Item = styled.div({
+  height: '1.5em',
+  marginLeft: '2%',
+});
+
+const CenterItem = styled.div`
+  flex-grow: 1;
+`;
 
 function UserBar() {
   return (
-    <div>
-      <Link to="/signup">회원 가입</Link>
-      <Link to="/login">로그인</Link>
-    </div>
+    <Container>
+      <Item> 1 </Item>
+      <CenterItem> 2 </CenterItem>
+      <Item>
+        <Link to="/login">로그인</Link>
+      </Item>
+    </Container>
   );
 }
 
