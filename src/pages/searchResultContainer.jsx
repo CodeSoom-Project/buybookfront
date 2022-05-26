@@ -1,20 +1,19 @@
-import SearchResult from "./searchResult";
-import {useSelector} from "react-redux";
-import {get} from "../utils";
-import {useQuery} from "react-query";
-import {fetcher, QueryKeys} from "../queryClient";
+import { useSelector } from 'react-redux';
+import { useQuery } from 'react-query';
+import SearchResult from './searchResult';
+import { get } from '../utils';
+import { fetcher, QueryKeys } from '../queryClient';
 
-const SearchResultContainer = () => {
-
+function SearchResultContainer() {
   const searched = useSelector(get('searched'));
 
-  const {data} = useQuery([QueryKeys.PRODUCTS],
-    () =>
-      fetcher({
-        method: 'GET',
-        path: `/products/`
-      }),
-  )
+  const { data } = useQuery(
+    [QueryKeys.PRODUCTS],
+    () => fetcher({
+      method: 'GET',
+      path: '/products/',
+    }),
+  );
 
   return (
     <>
@@ -26,6 +25,6 @@ const SearchResultContainer = () => {
     </>
 
   );
-};
+}
 
 export default SearchResultContainer;
