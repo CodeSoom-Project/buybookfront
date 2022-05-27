@@ -34,6 +34,8 @@ function Order({
         <br />
         <div>
           <div>위 사항을 적어서  010-????-####혹은 dladudgn123@naver.com 으로 보내주세요.</div>
+          <div>혹은 구글 form에서 간편하게 작성하실수있습니다</div>
+          <a target="_blank" href="https://forms.gle/t5SoasM2gjbnyCxo9" rel="noreferrer">간편하게 작성하러 가기</a>
           <div>현재는 무통장 입금 혹은 카카오페이로 받습니다.</div>
           <div>계좌 번호는 보라보라금고 1234567890 입니다</div>
         </div>
