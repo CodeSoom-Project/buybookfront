@@ -6,7 +6,7 @@ const NavStyle = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  backgroundColor: '#263343',
+  backgroundColor: '#DAD0ED',
   padding: '0.5em 0.75em',
 });
 
