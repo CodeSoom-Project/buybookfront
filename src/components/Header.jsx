@@ -12,7 +12,10 @@ const NavStyle = styled.div({
 
 const LinkStyle = styled.a`
   text-decoration: none;
-  font-color: #FFFFFF,
+  font-color: #FFFFFF;
+  Link: {
+    font-color: #FFFFFF,
+  }
 `;
 
 function Header() {
@@ -24,7 +27,7 @@ function Header() {
       <div>
         <SearchBarContainer />
         <Link to="/products">상품목록</Link>
-        <Link to="/cart">장바구니</Link>
+        {/* <Link to="/cart">장바구니</Link> */}
       </div>
     </NavStyle>
   );

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const MainWrapper = styled.div({
   backgroundColor: '#ffffff',
@@ -92,6 +93,7 @@ const Button = styled.button({
 
 function ProductDetail({
   item: {
+    id,
     title,
     image,
     description,
@@ -108,9 +110,14 @@ function ProductDetail({
             </ItemImg>
             <ItemDetail>
               <ItemName>{title}</ItemName>
-              <ItemPrice>{price}</ItemPrice>
+              <ItemPrice>
+                $
+                {price}
+              </ItemPrice>
               <ItemDescription>{description}</ItemDescription>
-              <Button type="button">바로 구매하기</Button>
+              <Link to={`/order/${id}`}>
+                <Button type="button">바로 구매하기</Button>
+              </Link>
               {/* <Button type="button">장바구니 담기</Button> */}
             </ItemDetail>
           </Item>

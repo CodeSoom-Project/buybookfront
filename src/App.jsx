@@ -11,6 +11,7 @@ import SearchResultContainer from './pages/searchResultContainer';
 import Cart from './pages/cart';
 import NotFoundPage from './pages/NotFoundPage';
 import SignUpPageContainer from './pages/SignUpPageContainer';
+import OrderPage from './pages/OrderPage';
 
 function App() {
   const queryClient = getClient();
@@ -19,11 +20,14 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<ProductList />} />
+          {' '}
+          // 메인페이지로 나중에 다시 바꾸기
           <Route path="signup" element={<SignUpPageContainer />} />
           <Route path="login" element={<LoginPageContainer />} />
           <Route path="products" element={<ProductList />} />
           <Route path="products/:id" element={<ProductDetailPage />} />
+          <Route path="order/:id" element={<OrderPage />} />
           <Route path="search/:word" element={<SearchResultContainer />} />
           <Route path="cart" element={<Cart />} />
           <Route path="*" element={<NotFoundPage />} />

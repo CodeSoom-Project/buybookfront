@@ -17,8 +17,8 @@ const CenterItem = styled.div`
 function UserBar() {
   return (
     <Container>
-      <Item> 1 </Item>
-      <CenterItem> 2 </CenterItem>
+      <Item />
+      <CenterItem />
       <Item>
         <Link to="/login">로그인</Link>
       </Item>
