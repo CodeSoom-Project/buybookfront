@@ -5,7 +5,7 @@ import { get } from '../utils';
 
 import SearchBar from './SearchBar';
 
-import { changeSearchField } from '../slice';
+import { changeSearchField } from '../searchSlice';
 
 export default function SearchBarContainer() {
   const navigate = useNavigate();

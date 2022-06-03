@@ -8,10 +8,10 @@ import ProductList from './pages/products';
 import ProductDetailPage from './pages/products/[id]';
 import Layout from './pages/_layout';
 import SearchResultContainer from './pages/searchResultContainer';
-import Cart from './pages/cart';
 import NotFoundPage from './pages/NotFoundPage';
 import SignUpPageContainer from './pages/SignUpPageContainer';
 import OrderPage from './pages/OrderPage';
+import CartContainer from './pages/cart/CartContainer';
 
 function App() {
   const queryClient = getClient();
@@ -29,7 +29,7 @@ function App() {
           <Route path="products/:id" element={<ProductDetailPage />} />
           <Route path="order/:id" element={<OrderPage />} />
           <Route path="search/:word" element={<SearchResultContainer />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart" element={<CartContainer />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

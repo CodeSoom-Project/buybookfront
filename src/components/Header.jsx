@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import SearchBarContainer from './SearchBarContainer';
 
 const NavStyle = styled.div({
@@ -19,6 +20,8 @@ const LinkStyle = styled.a`
 `;
 
 function Header() {
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
+
   return (
     <NavStyle>
       <LinkStyle>
@@ -27,7 +30,8 @@ function Header() {
       <div>
         <SearchBarContainer />
         <Link to="/products">상품목록</Link>
-        {/* <Link to="/cart">장바구니</Link> */}
+        <Link to="/cart">장바구니</Link>
+        <span>{cartTotalQuantity}</span>
       </div>
     </NavStyle>
   );

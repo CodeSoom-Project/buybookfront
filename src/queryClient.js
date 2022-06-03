@@ -1,5 +1,4 @@
 import { QueryClient } from 'react-query';
-import axios from 'axios';
 
 const BASE_URL = 'https://fakestoreapi.com';
 
@@ -46,8 +45,6 @@ export const fetcher = async ({
 
     if (body) fetchOptions.body = JSON.stringify(body);
 
-    // const res = await axios(url, fetchOptions);
-    // return res;
     const res = await fetch(url, fetchOptions);
     const json = await res.json();
     return json;
