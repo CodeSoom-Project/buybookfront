@@ -20,7 +20,7 @@ function UserBar() {
       <Item />
       <CenterItem />
       <Item>
-        <Link to="/login">로그인</Link>
+        {/* <Link to="/login">로그인</Link> */}
       </Item>
     </Container>
   );

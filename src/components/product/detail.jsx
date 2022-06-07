@@ -99,6 +99,7 @@ function ProductDetail({
     description,
     price,
   },
+  onClick,
 }) {
   return (
     <MainWrapper>
@@ -118,7 +119,12 @@ function ProductDetail({
               <Link to={`/order/${id}`}>
                 <Button type="button">바로 구매하기</Button>
               </Link>
-              {/* <Button type="button">장바구니 담기</Button> */}
+              <Button
+                type="button"
+                onClick={onClick}
+              >
+                장바구니 담기
+              </Button>
             </ItemDetail>
           </Item>
         </ItemList>

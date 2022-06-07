@@ -12,12 +12,6 @@ const SearchBarContainer = styled.div`
   padding-left: 0.31em;
   transition: all 0.3s ease;
 `;
-//
-// const SearchInput = styled.input`
-//   padding-left: 48px;
-//   border: yellowgreen;
-//   //postion: absolute;
-// `;
 
 function SearchBar({ searched, onChange, onSubmit }) {
   function handleChange(event) {
