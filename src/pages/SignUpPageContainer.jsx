@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import SignUpPage from './SignUpPage';
+import SignUpForm from './SignUpForm';
 
 const FormWrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const FormWrapper = styled.div`
 function SignUpPageContainer() {
   return (
     <FormWrapper>
-      <SignUpPage />
+      <SignUpForm />
     </FormWrapper>
   );
 }
